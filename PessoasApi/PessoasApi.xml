@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PessoasApi</name>
+    </assembly>
+    <members>
+        <member name="M:PessoasApi.Controllers.PessoasController.Post(PessoasApi.Model.Pessoa)">
+            <summary>
+            
+            </summary>
+            <param name="pessoa"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

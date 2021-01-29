@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PessoasApi", "PessoasApi\PessoasApi.csproj", "{9C0F5395-6A24-4751-81C6-8EE4CC3A4377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandApi", "CommandApi\CommandApi.csproj", "{E147213B-879A-4563-8723-9BACED6EE0F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C0F5395-6A24-4751-81C6-8EE4CC3A4377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0F5395-6A24-4751-81C6-8EE4CC3A4377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0F5395-6A24-4751-81C6-8EE4CC3A4377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0F5395-6A24-4751-81C6-8EE4CC3A4377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E147213B-879A-4563-8723-9BACED6EE0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E147213B-879A-4563-8723-9BACED6EE0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E147213B-879A-4563-8723-9BACED6EE0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E147213B-879A-4563-8723-9BACED6EE0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0093C0E6-7782-4A13-971A-7909604F11DD}
+	EndGlobalSection
+EndGlobal
