@@ -41,8 +41,10 @@ namespace PessoasApi.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status201Created)]
         public string Post([FromBody] Pessoa pessoa)
         {
-            return pessoa.GetType().Name;
+            return $"Objeto: {pessoa.GetType().Name}, Resumo: {pessoa.Resumo()}";
         }
+
+
 
         private readonly Pessoa[] pessoas = new Pessoa[] {
                     new PessoaFisica() {

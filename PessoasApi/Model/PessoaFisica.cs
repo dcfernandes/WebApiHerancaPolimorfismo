@@ -9,7 +9,9 @@
         public string Cpf { get; set; }
         public DadosSaude DadosSaude { get; set; }
 
-        
+        public override string Resumo()
+        => $"Pessoa {Tipo} - Nome: {Nome}, Data de Nascimento: {Nascimento:dd/MM/yyyy}, CPF: {Cpf}";
+
     }
 
     public class DadosSaude

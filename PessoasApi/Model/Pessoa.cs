@@ -8,5 +8,7 @@ namespace PessoasApi.Model
         public abstract string Tipo { get; }
         public int Id { get; set; }
         public string Nome { get; set; }
+
+        public abstract string Resumo();
     }
 }
