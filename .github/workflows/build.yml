@@ -1,0 +1,33 @@
+name: Build e Testes
+
+on:
+  push:
+    branches: ["claude/dotnet-10-upgrade-tests-MPIaa", "main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    name: Build e Testes de Unidade
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencias
+        run: dotnet restore WebApiHerancaPolimorfismo.sln
+
+      - name: Build
+        run: dotnet build WebApiHerancaPolimorfismo.sln --no-restore --configuration Release
+
+      - name: Testes - PessoasApi
+        run: dotnet test PessoasApi.Tests/PessoasApi.Tests.csproj --no-restore --configuration Release --verbosity normal
+
+      - name: Testes - CommandApi
+        run: dotnet test CommandApi.Tests/CommandApi.Tests.csproj --no-restore --configuration Release --verbosity normal

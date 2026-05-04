@@ -1,26 +1,29 @@
-namespace PessoasApi
-{
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.Hosting;
-    using Microsoft.Extensions.Logging;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+using JsonSubTypes;
+using PessoasApi.Model;
 
-    public class Program
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+        options.SerializerSettings.Converters.Add(
+            JsonSubtypesConverterBuilder
+                .Of(typeof(Pessoa), nameof(Pessoa.Tipo))
+                .RegisterSubtype(typeof(PessoaFisica), "Fisica")
+                .RegisterSubtype(typeof(PessoaJuridica), "Juridica")
+                .Build()
+        );
+    });
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-}
+builder.Services.AddSwaggerGen(options => options.UseOneOfForPolymorphism());
+
+var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();
+
+public partial class Program { }
